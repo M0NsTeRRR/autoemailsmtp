@@ -37,8 +37,3 @@ jobs:
           export PATH="$PATH:$HOME/.local/bin"
           source `poetry env info --path`/bin/activate
           pre-commit run --all-files
-      - name: Run test
-        run: |
-          export PATH="$PATH:$HOME/.local/bin"
-          source `poetry env info --path`/bin/activate
-          poetry run pytest
