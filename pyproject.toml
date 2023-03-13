@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "autoemailsmtp"
+version = "0"
+description = "Send mail to SMTP"
+authors = ["Ludovic Ortega <ludovic.ortega@adminafk.fr>"]
+license = "CeCILL"
+readme = "README.md"
+homepage = "https://github.com/M0NsTeRRR/AutoEmail"
+repository = "https://github.com/M0NsTeRRR/AutoEmail"
+keywords = ["email", "smtp"]
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: CEA CNRS Inria Logiciel Libre License, version 2.1 (CeCILL-2.1)",
+    "Topic :: Utilities",
+]
+include = [
+    "LICENSE",
+    "LICENSE.fr",
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.28.2"
+pydantic = {extras = ["dotenv"], version = "^1.10.6"}
+jinja2 = "^3.1.2"
+
+[tool.poetry.dev-dependencies]
+pre-commit = "^3.1.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
