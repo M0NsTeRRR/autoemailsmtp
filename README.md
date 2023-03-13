@@ -29,7 +29,7 @@ AUTOEMAILSMTP_DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/aaaaaa/aaaaa
 ```
 
 # Systemd
-To send an email each month you can setup a cron or use systemd like (must be adapated).
+To send an email each month you can setup a cron or use systemd like (must be adapted to your use case).
 Service file
 ```
 [Unit]
@@ -37,9 +37,11 @@ Description=send an email
 After=network-online.target
 
 [Service]
+User=autoemailsmtp
+Group=autoemailsmtp
+EnvironmentFile=/etc/autoemailsmtp/.env
 Type=oneshot
-ExecStart=/opt/autoemailsmtp/venv/bin/python autoemailsmtp.send_mail.py --to email@example.com --subject "rent" --file rent_receipt --discord
-
+ExecStart=/opt/autoemailsmtp/venv/bin/python -m autoemailsmtp.send_mail --to email@example.fr --template /etc/autoemailsmtp/template.j2
 [Install]
 WantedBy=multi-user.target
 ```
