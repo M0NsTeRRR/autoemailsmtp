@@ -73,7 +73,7 @@ pre-commit install
 pre-commit run --all-files
 ```
 
-## Contributing
+# Contributing
 
 We welcome and encourage contributions to this project! Please read the [Contributing guide](CONTRIBUTING.md). Also make sure to check the [Code of Conduct](CODE_OF_CONDUCT.md) and adhere to its guidelines
 
